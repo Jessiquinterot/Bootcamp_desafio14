@@ -1,0 +1,17 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: my-aplication
+spec:
+  destination:
+    name: default
+    namespace: default
+    server: 'https://kubernetes.default.svc'
+  source: 
+    repoURL: 'https://github.com/Jessiquinterot/repo-helm'
+    targetRevision: 'templates'
+    chart: templates
+    path: 'templates/'
+  sources: []
+  project: my-aplication
+
